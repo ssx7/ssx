@@ -1,6 +1,5 @@
 <?php
 include('Database.php');
-session_start();
 $db = new Database();
 $db->table = 'users';
 
@@ -11,8 +10,11 @@ $pass_hash = password_hash($pass, PASSWORD_DEFAULT);
 $pass_confirm = isset($_POST['pass2']) ? $_POST['pass2'] : false;
 
 $email = isset($_POST['email']) ? $_POST['email'] : false;
+$array = [
+		'login' => $name,
+	];
 
-$tablica = ['check_user'=>null, 'check_email'=>null, 'check_pass'=>''];
+$tablica = ['check_user'=>$db->checkUser($array, 'users'), 'check_email'=>null, 'check_pass'=>null];
 
 if($pass == $pass_confirm)
 {
@@ -23,9 +25,6 @@ if($pass == $pass_confirm)
 		'password' => mysqli_real_escape_string($db->link, $pass_hash)
 	]);
 
-	$_SESSION['check'] = true;
-	$_SESSION['name'] = $name;
-	$_SESSION['email'] = $email;
 	header("Location: ../index.php");
 }
 else
@@ -33,12 +32,13 @@ else
 	//user - potrzeban baza
 	//email - baza 
 	//password - zle haslo
-	header('Content-Type: application/json; charset=UTF-8');
+	
 	$tablica['check_pass'] = 'Oba hasła nie są zgodne';
-	print json_encode($tablica);
-
+	
 }
 
+header('Content-Type: application/json; charset=UTF-8');
+print json_encode($tablica);
 
 
 ?>

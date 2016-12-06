@@ -71,9 +71,33 @@
                                     <button type="submit" class="btn btn-warning btn-lg btn-block" id="zajerestruj">Zarejestruj się</button>
                                 </div>
                             </form>
+
+                            <div class="gowno">
+                                <span class="check_user"></span>
+                                <span class="check_pass"></span>
+                                <span class="check_email"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+<div class="modal fade" id="info">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Zostałeś prawidłowo zarejestrowany</h4>
+            </div>
+            <div class="modal-body">
+                Możesz teraz przejść do logowania.
+            </div>
+            <div class="text-center" style="padding-bottom: 10px">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

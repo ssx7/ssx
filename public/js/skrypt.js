@@ -52,6 +52,29 @@ $('#formularz').submit(function(e) {
 	  
 	  success: function(data){
 	  		console.log(data);
+	  		var check = 0;
+	  		if(data.check_pass)
+	  		{
+	  			check += 1;
+	  			$('.check_pass').text(data.check_pass);
+	  		}
+	  		if(data.check_user)
+	  		{
+	  			check += 1;
+	  			$('.check_pass').text(data.check_user);
+	  		}
+	  		if(data.check_email)
+	  		{
+	  			check += 1;
+	  			$('.check_pass').text(data.check_email);
+	  		}
+
+	  		if(check == 0)
+	  		{
+	  			$('#rejestracja').modal('hide');
+	  			$('#info').modal('show');
+
+	  		}
 	  },
 	  errors: function(data){
 	  		console.log(data);

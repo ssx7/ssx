@@ -10,7 +10,7 @@
 		'password' => $password
 	];
 
-	if($db->checkLogin($array, 'users')==true) 
+	if($db->checkPass($array, 'users')==true) 
 	{
 		$_SESSION['check'] = true;
 		$_SESSION['name'] = $login;

@@ -28,7 +28,7 @@ class Database {
 		
 	}
 	*/
-	public function checkLogin($array, $table){
+	public function checkPass($array, $table){
 		$select = "SELECT * FROM ".$table." WHERE name='".$array['login']."'  ";
 
 		$tablica = mysqli_query($this->link, $select)or die(mysqli_error($this->link));
@@ -53,6 +53,23 @@ class Database {
 
 		
 	}
+
+	public function checkUser($array, $table){
+		$select = "SELECT COUNT(*) FROM ".$table." WHERE name='".$array['login']."'  ";
+
+		$tablica = mysqli_query($this->link, $select)or die(mysqli_error($this->link));
+
+		if((int)$tablica->fetch_row()[0] == 1)
+		{
+			return 'Użytkownik juz istnieje';
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+
 
 
 	/*
