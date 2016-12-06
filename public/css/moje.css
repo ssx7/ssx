@@ -1,0 +1,260 @@
+/*  Główne CSS*/
+
+body
+{
+  background-image: url(2.jpg);
+  background-attachment:fixed;
+  color: #E85C17;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+  color: #E85C17;
+}
+
+h1
+{
+  font-size: 6rem;
+}
+
+h2
+{
+  font-size: 4rem;
+  line-height: 6rem;
+
+}
+
+h3
+{
+  font-size: 2.5rem;
+  line-height: 3rem;
+
+}
+
+h4
+{
+  font-size: 2rem;
+
+}
+
+h5
+{
+  font-size: 1.4rem;
+  color: #FFCC33;
+
+}
+
+.ziel
+{
+  color: #33CC00;
+}
+
+.czer
+{
+  color: #FF3300 ;
+}
+
+a:hover
+{
+  text-decoration: none;
+}
+
+
+/*  Menu Górne */
+
+
+#menu
+{
+  background-image: url(2.jpg);
+}
+
+.navbar
+{
+  background-color:transparent;
+  font-size: 1.7rem;
+  color: #ffffff;
+  padding-top: 3rem;
+  border-color:transparent;
+}
+
+.navbar-outer
+{
+  width: 1200px;
+}
+.navbar-inverse .navbar-nav > li > a
+{
+  color: #ffffff;
+  margin-left: 5px;
+  border: 1px solid transparent;
+  line-height: 1rem;
+}
+
+
+.navbar-inverse .navbar-nav > li > a:hover
+{
+  display: block;
+  color:#FFCC33;
+  border:1px solid transparent;
+  border-color: #FFCC33;
+  line-height: 1rem;
+  border-radius: 4px;
+  transition: all 0.8s ease;
+
+}
+.navbar-inverse .navbar-nav > .active > a
+{
+  display: block;
+  border-color: #ffffff;
+  background-color:transparent;
+  border-radius: 4px;
+
+}
+.navbar-inverse .navbar-nav > .active > a:hover
+{
+  color:#FFCC33;
+  background-color:transparent;
+}
+
+#logo img
+{
+  display: block;
+  float:none;
+  margin-top:-1rem;
+}
+
+
+/*  Karuzela */
+
+#pic
+{
+  padding-top:8rem;
+}
+
+.carousel .item
+{
+  width: 100%;
+  height: 92vh;
+}
+
+.carousel .item img
+{
+  width: 100%;
+  height: 92vh;
+}
+
+.carousel .carousel-control
+{
+  background: none;
+  border: none;
+}
+
+/*  Kalendarz */
+
+#kalendarz
+{
+  padding-top:8rem;
+  padding-bottom:4rem;
+  text-align: center;
+
+}
+
+.panel
+{
+  background-color:transparent;
+}
+.panel:hover
+{
+  background-color:#990000;
+}
+
+
+/*  Skład  */
+
+#sklad
+{
+  padding-top:8rem;
+  padding-bottom:4rem;
+}
+
+.nav-pills > li
+{
+  float:none;
+  padding-left: 1rem;
+  display: inline-block;
+}
+
+.nav-pills > li > a
+{
+  border: 1px solid #E85C17;
+  color:#E85C17;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover
+{
+  color:#ffffff;
+  background-color:#E85C17;
+}
+
+.nav-pills > li > a:hover
+{
+  border: 1px solid #E85C17;
+  background-color:transparent;
+}
+
+
+/*  Galieria */
+
+#galeria
+{
+  padding-top:8rem;
+  padding-bottom:4rem;
+}
+
+.galeriaa
+{
+  margin-bottom: 2rem;
+}
+
+/*  Tabela */
+
+#tabela
+{
+  padding-top:14rem;
+  padding-bottom:7rem;
+}
+
+/*  Historia */
+
+#historia
+{
+  padding-top:8rem;
+  padding-bottom:4rem;
+}
+
+
+/*  Statystyki */
+
+#statystyki
+{
+  padding-top:8rem;
+  padding-bottom:4rem;
+}
+
+/*.table-hover > th.active
+{
+  color:#E85C17;
+}*/
+
+/*  Stopka */
+
+#stopka
+{
+  padding-top:1rem;
+  padding-bottom:0rem;
+  text-align: left;
+  background-color: #000000;
+  color: #ffffff;
+
+}
