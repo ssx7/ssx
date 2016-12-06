@@ -27,6 +27,34 @@ class Database {
 		mysqli_query($this->link, $sql) or die(mysqli_error($this->link));
 		
 	}
+	*/
+	public function checkLogin($array, $table){
+		$select = "SELECT * FROM ".$table." WHERE name='".$array['login']."'  ";
+
+		$tablica = mysqli_query($this->link, $select)or die(mysqli_error($this->link));
+
+		$wyniki = [];
+		while($row = mysqli_fetch_array($tablica))
+		{
+			$wyniki[] = $row;
+		}
+
+		foreach($wyniki as $wynik)
+		{
+			if(password_verify($array['password'], $wynik['password']))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		
+	}
+
+
 	/*
 	* Add record 
 	* Dodawanie rekordu, $rows przyjmuje tylko array

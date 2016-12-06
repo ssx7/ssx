@@ -12,14 +12,15 @@ $pass_confirm = isset($_POST['pass2']) ? $_POST['pass2'] : false;
 
 $email = isset($_POST['email']) ? $_POST['email'] : false;
 
+$tablica = ['check_user'=>null, 'check_email'=>null, 'check_pass'=>''];
 
 if($pass == $pass_confirm)
 {
 	$db->insert([
-		'name' => $name,
+		'name' =>mysqli_real_escape_string($db->link, $name),
 		'created_at' => date('Y-m-d H:i:s'),
-		'email' => $email,
-		'password' => $pass_hash
+		'email' =>mysqli_real_escape_string($db->link, $email),
+		'password' => mysqli_real_escape_string($db->link, $pass_hash)
 	]);
 
 	$_SESSION['check'] = true;
@@ -29,8 +30,15 @@ if($pass == $pass_confirm)
 }
 else
 {
-	echo 'hasla nie sa zblizone';
+	//user - potrzeban baza
+	//email - baza 
+	//password - zle haslo
+	header('Content-Type: application/json; charset=UTF-8');
+	$tablica['check_pass'] = 'Oba hasła nie są zgodne';
+	print json_encode($tablica);
+
 }
+
 
 
 ?>

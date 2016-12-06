@@ -9,7 +9,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class = "col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <form action="#" method="POST">
+                            <form action="http://localhost/phpszymon/app/Login.php" method="POST">
                                 <div class="form-group">
                                     <label for= "login" class ="control-label">Nazwa użytkownika</label>
                                     <input type="text" class="form-control" name="login" placeholder="Nazwa użytkownika">
@@ -42,7 +42,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <form method="POST" action="http://localhost/phpszymon/app/Register.php">
+                            <form method="POST" id="formularz" action="http://localhost/phpszymon/app/Register.php">
                                 <div class="form-group">
                                     <label for="login1" class="control-label">Nazwa użytkownika</label>
                                     <input type="text" name="login1" class="form-control" placeholder="Nazwa użytkownika">
@@ -50,15 +50,17 @@
                                 <div class = row>
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                         <div class="form-group">
-                                            <label for="pass" class="control-label">Hasło</label>
-                                            <input type="password" name="pass" class="form-control" placeholder="Hasło">
+                                            <label for="pass" class="control-label" >Hasło</label>
+                                            <input type="password" name="pass" class="form-control" placeholder="Hasło" id="pass1">
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                         <div class="form-group">
                                             <label for="pass2" class="control-label">Powtórz hasło</label>
-                                            <input type="password" name="pass2" class="form-control" placeholder="Powtórz hasło">
+                                            <input type="password" name="pass2" class="form-control" placeholder="Powtórz hasło" id="pass2">
                                         </div>
+                                    </div>
+                                    <div id="wrong_pass" class="alert col-xs-12 text-center">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -66,7 +68,7 @@
                                     <input type="email" name="email" class="form-control" placeholder="Email">
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-warning btn-lg btn-block" >Zarejestruj się</button>
+                                    <button type="submit" class="btn btn-warning btn-lg btn-block" id="zajerestruj">Zarejestruj się</button>
                                 </div>
                             </form>
                         </div>
