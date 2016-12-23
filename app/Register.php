@@ -29,14 +29,13 @@ if($pass == $pass_confirm)
 }
 else
 {
-	//user - potrzeban baza
+	//user - potrzebna baza
 	//email - baza 
 	//password - zle haslo
 	
 	$tablica['check_pass'] = 'Oba hasła nie są zgodne';
 	
 }
-
 header('Content-Type: application/json; charset=UTF-8');
 print json_encode($tablica);
 

@@ -72,7 +72,7 @@
                                 </div>
                             </form>
 
-                            <div class="gowno">
+                            <div class="chk">
                                 <span class="check_user"></span>
                                 <span class="check_pass"></span>
                                 <span class="check_email"></span>

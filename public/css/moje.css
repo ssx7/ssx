@@ -157,6 +157,16 @@ a:hover
   text-align: center;
 
 }
+#article
+{
+  padding-top:8rem;
+  padding-bottom:4rem;
+  text-align: center;
+
+}
+
+
+
 
 .panel
 {
@@ -164,9 +174,13 @@ a:hover
 }
 .panel:hover
 {
-  background-color:#990000;
+  background-color:transparent;
 }
 
+.dodaj:hover
+{
+  background-color:transparent;
+}
 
 /*  Skład  */
 

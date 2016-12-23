@@ -31,6 +31,8 @@
 
     <!-- KARUZELA -->
     <?php include('resources/karuzela.php'); ?>
+    <!-- ARTYKUŁY -->
+    <?php include('resources/article.php'); ?>
 
     <!-- CONTENT - ŁADOWANIE ZAWARTOŚCI -->
     <?php include('resources/content.php'); ?>
