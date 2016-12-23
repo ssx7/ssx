@@ -61,7 +61,7 @@ class Database {
 
 		if((int)$tablica->fetch_row()[0] == 1)
 		{
-			return 'Użytkownik juz istnieje';
+			return true;
 		}
 		else
 		{

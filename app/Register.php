@@ -14,10 +14,18 @@ $array = [
 		'login' => $name,
 	];
 
-$tablica = ['check_user'=>$db->checkUser($array, 'users'), 'check_email'=>null, 'check_pass'=>null];
+$tablica = ['check_user'=> null, 'check_email'=>null, 'check_pass'=>null];
+$ilosc_bledow = 0;
 
-if($pass == $pass_confirm)
+if($db->checkUser($array, 'users'))
 {
+	$ilosc_bledow += 1;
+	$tablice['check_user'] = 'Użytkownik istnieje KURWA MAĆ';
+}
+
+if($pass == $pass_confirm && !$db->checkUser($array, 'users'))
+{
+
 	$db->insert([
 		'name' =>mysqli_real_escape_string($db->link, $name),
 		'created_at' => date('Y-m-d H:i:s'),
@@ -29,12 +37,17 @@ if($pass == $pass_confirm)
 }
 else
 {
+	$ilosc_bledow += 1;
 	//user - potrzebna baza
 	//email - baza 
 	//password - zle haslo
 	
 	$tablica['check_pass'] = 'Oba hasła nie są zgodne';
-	
+}
+
+if($ilosc_bledow > 0)
+{
+	http_response_code(400);
 }
 header('Content-Type: application/json; charset=UTF-8');
 print json_encode($tablica);

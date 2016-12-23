@@ -31,13 +31,13 @@
                     <div class= "col-xs-12 col-sm-12 col-md-12 col-lg-12 panel">
                         <div class="panel-heading">
                             <a href="#artykul2" data-toggle="collapse" data-parent="#artykuly">
-                                <h3>Artykuł 2</h3>
-                                <h5>Data</h5>
+                                <h3>Cleveland Cavaliers odebrali mistrzowskie pierścienie</h3>
+                                <h5>26-10-2016</h5>
                             </a>
                         </div>
                         <div id="artykul2" class="panel-collapse collapse">
                             <div class = "panel-body">
-                                2
+                                Cleveland Cavaliers rozpoczęli sezon NBA 2016/2017 od domowego zwycięstwa 117:88 nad New York Knicks. Przed spotkaniem miejsce miała ceremonia wręczenia im mistrzowskich pierścieni. Okazała się ona naprawdę wyjątkowa, jest co oglądać.
                             </div>
                         </div>
                     </div>
@@ -46,13 +46,13 @@
                     <div class= "col-xs-12 col-sm-12 col-md-12 col-lg-12 panel">
                         <div class="panel-heading">
                             <a href="#artykul3" data-toggle="collapse" data-parent="#artykuly">
-                                <h3>Artykuł 3</h3>
-                                <h5>Data</h5>
+                                <h3>Wiecznie młody LeBron James najszybciej dotarł do granicy 27 tys. punktów</h3>
+                                <h5>12.11.2016</h5>
                             </a>
                         </div>
                         <div id="artykul3" class="panel-collapse collapse">
                             <div class = "panel-body">
-                                3
+                                To juz 10 lat dominacji LeBrona Jamesa w NBA - 7 wizyt w finałach, 4 nagrody MVP i 3 tytuły mistrzowskie. Na koniec kariery James ma szansę pobić kilka rekordów. Obecnie śrubuje wciąż jeden z nich.
                             </div>
                         </div>
                     </div>
@@ -61,13 +61,13 @@
                     <div class= "col-xs-12 col-sm-12 col-md-12 col-lg-12 panel">
                         <div class="panel-heading">
                             <a href="#artykul4" data-toggle="collapse" data-parent="#artykuly">
-                                <h3>Artykuł 4</h3>
-                                <h5>Data</h5>
+                                <h3>Kevin Love zdobył 34 punkty w pierwszej kwarcie!</h3>
+                                <h5>24.11.2016</h5>
                             </a>
                         </div>
                         <div id="artykul4" class="panel-collapse collapse">
                             <div class = "panel-body">
-                                4
+                                Niesamowity wyczyn Kevina Love'a! Skrzydłowy zdobył 34 ze swoich 40 punktów w samej pierwszej kwarcie, zapisując się na kartach ligowej historii.
                             </div>
                         </div>
                     </div>
@@ -77,13 +77,13 @@
                     <div class= "col-xs-12 col-sm-12 col-md-12 col-lg-12 panel">
                         <div class="panel-heading">
                             <a href="#artykul5" data-toggle="collapse" data-parent="#artykuly">
-                                <h3>Artykuł 5</h3>
-                                <h5>Data</h5>
+                                <h3>Mistrzowie tracą podstawowego gracza</h3>
+                                <h5>22.12.2016</h5>
                             </a>
                         </div>
                         <div id="artykul5" class="panel-collapse collapse">
                             <div class = "panel-body">
-                                5
+                                Cleveland Cavaliers przez kilka tygodni będą musieli radzić sobie bez jednego ze swoich strzelców. Urazu doznał bowiem J.R. Smith.
                             </div>
                         </div>
                     </div>
