@@ -69,6 +69,20 @@ class Database {
 		}
 	}
 
+	public function checkEmail($array, $table){
+		$select = "SELECT COUNT(*) FROM ".$table." WHERE email='".$array['email']."'  ";
+
+		$tablica = mysqli_query($this->link, $select)or die(mysqli_error($this->link));
+
+		if((int)$tablica->fetch_row()[0] == 1)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 
 
 
@@ -113,6 +127,30 @@ class Database {
 
 	public function delete(){
 
+	}
+ 	/*
+ 	* Wyswietlenie rekordow
+ 	*/
+	public function get(){
+		$zapytanie = "SELECT * FROM ".$this->table. ";";
+		$tablica = mysqli_query($this->link, $zapytanie)or die(mysqli_error($this->link));
+
+		$wyniki = [];
+		while($row = mysqli_fetch_array($tablica))
+		{
+			$wyniki[] = $row;
+		}
+		return $wyniki;
+	}
+	/*
+ 	* Wyswielnie konkrentego id
+ 	*/
+	public function find($id){
+		$zapytanie = "SELECT * FROM ".$this->table. " WHERE id=".$id." ;";
+		$tablica = mysqli_query($this->link, $zapytanie)or die(mysqli_error($this->link));
+
+		$row = mysqli_fetch_array($tablica);
+		return $row[0];
 	}
 
 	public function charset($table){

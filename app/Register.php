@@ -12,6 +12,8 @@ $pass_confirm = isset($_POST['pass2']) ? $_POST['pass2'] : false;
 $email = isset($_POST['email']) ? $_POST['email'] : false;
 $array = [
 		'login' => $name,
+		'email' => $email,
+		
 	];
 
 $tablica = ['check_user'=> null, 'check_email'=>null, 'check_pass'=>null];
@@ -20,10 +22,15 @@ $ilosc_bledow = 0;
 if($db->checkUser($array, 'users'))
 {
 	$ilosc_bledow += 1;
-	$tablice['check_user'] = 'Użytkownik istnieje KURWA MAĆ';
+	$tablica['check_user'] = 'Użytkownik istnieje';
+}
+if($db->checkEmail($array, 'users'))
+{
+	$ilosc_bledow += 1;
+	$tablica['check_email'] = 'Email istnieje';
 }
 
-if($pass == $pass_confirm && !$db->checkUser($array, 'users'))
+if($pass == $pass_confirm && !$db->checkUser($array, 'users') && !$db->checkEmail($array, 'users'))
 {
 
 	$db->insert([
@@ -42,7 +49,7 @@ else
 	//email - baza 
 	//password - zle haslo
 	
-	$tablica['check_pass'] = 'Oba hasła nie są zgodne';
+	$tablica['check_pass'] = 'Hasła nie są zgodne';
 }
 
 if($ilosc_bledow > 0)

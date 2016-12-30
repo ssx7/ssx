@@ -3,15 +3,15 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <nav class="navbar navbar-inverse" role="navigation" id="pasek_nawi">
                 <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu1">
+                    <div class="navbar-header" >
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu1" >
                             <span class="sr-only">Nawigacja</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <div id="logo">
-                            <a class="navbar-brand" ><img src= "public/image/cc logo1.png" class="img-responsive" ></a>
+                        <div id="logo" class="pull-left" style="margin-left: -50px">
+                            <a class="navbar-brand" ><img src= "public/image/cc logo1.png" class="img-responsive"></a>
                         </div>
                     </div>
                     <div class="collapse navbar-collapse" id="menu1">

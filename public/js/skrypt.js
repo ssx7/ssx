@@ -43,6 +43,8 @@ $('#pass2').bind("keyup change",function(event) {
 	}
 });
 
+
+
 $('#formularz').submit(function(e) {
 	e.preventDefault();
 	$.ajax({
@@ -77,13 +79,76 @@ $('#formularz').submit(function(e) {
 	  		}
 	  },
 	  errors: function(data){
+	  		if(data.responseJSON.check_user)
+	  		{
+
+	  		}
+	  		if(data.responseJSON.check_pass)
+	  		{
+
+	  		}
+
+	  		if(data.responseJSON.check_email)
+	  		{
+
+	  		}
 	  		console.log(data);
 	  }
 	});
 });
 
+$('.zly-user').hide();
+$('.zly-pass').hide();
 
+$('#formularz-logowania').submit(function(e) {
+	e.preventDefault();
+	$('.zly-user').hide();
+	$('.zly-pass').hide();
+	$.ajax({
+	  type: "POST",
+	  url: $('#formularz-logowania').attr('action'),
+	  data: $('#formularz-logowania').serialize(),
+	  
+	  success: function(data){
+	  		
+	  		var check = 0;
+	  		window.location.href = 'http://localhost/phpszymon/index.php';
+	  },
+	  error: function(data){
+	  		if(data.responseJSON.check_user != null)
+	  		{
+	  			$('.zly-user').show();
+	  		}
+	  		
 
+	  		if(data.responseJSON.check_email)
+	  		{
+
+	  		}
+	  		console.log(data.responseJSON);
+	  }
+	});
+});
+// PRZESUWANIE STRONY
+$(function() {
+      $('.kliknij').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+          var target = $(this.hash);
+
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top - 80
+            }, 700);
+                
+                
+            return false;
+          }
+        }
+      });
+          
+          
+    });
 
 
 

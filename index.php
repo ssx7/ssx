@@ -19,6 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="public/css/moje.css">
     <link rel="stylesheet" type="text/css" href="public/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="public/css/responsive.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
@@ -31,6 +32,7 @@
 
     <!-- KARUZELA -->
     <?php include('resources/karuzela.php'); ?>
+
     <!-- ARTYKUŁY -->
     <?php include('resources/article.php'); ?>
 
