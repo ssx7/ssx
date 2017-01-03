@@ -90,24 +90,24 @@ if(isset($_SESSION)) :
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.html"><i class="fa fa-circle-o"></i> Konferencja Wschodnia</a></li>
-            <li ><a href="index2.html"><i class="fa fa-circle-o"></i> Konferencja Zachodnia</a></li>
-            <li ><a href="index2.html"><i class="fa fa-circle-o"></i> Statystyki</a></li>
+            <li><a href="?controller=KonfWs"><i class="fa fa-circle-o"></i> Konferencja Wschodnia</a></li>
+            <li ><a href="?controller=KonfZach"><i class="fa fa-circle-o"></i> Konferencja Zachodnia</a></li>
+            <li ><a href="?controller=statystyki"><i class="fa fa-circle-o"></i> Statystyki</a></li>
           </ul>
         </li>
         <li>
         <li>
-          <a href="pages/widgets.html">
+          <a href="?controller=galeria">
             <i class="fa fa-picture-o" aria-hidden="true"></i> <span>Galeria</span>
           </a>
         </li>
         <li>
-          <a href="pages/widgets.html">
+          <a href="?controller=players">
             <i class="fa fa-users" aria-hidden="true"></i> <span>Zawodnicy</span>
           </a>
         </li>
         <li>
-          <a href="pages/widgets.html">
+          <a href="?controller=calendar">
             <i class="fa fa-calendar" aria-hidden="true"></i> <span>Kalendarz rozgrywek</span>
           </a>
         </li>
