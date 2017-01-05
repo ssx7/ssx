@@ -47,8 +47,9 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <form method="POST" id="formularz" action="http://localhost/phpszymon/app/Register.php">
                                 <div class="form-group">
-                                    <label for="login1" class="control-label">Nazwa użytkownika</label>
+                                    <label for="login1" class="control-label" >Nazwa użytkownika</label>
                                     <input type="text" name="login1" class="form-control" placeholder="Nazwa użytkownika" required>
+                                    <span class="help-block reslogin" style="color:red; font-size: 80%">Login jest już zajęty</span> 
                                 </div>
                                 <div class = row>
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -69,6 +70,7 @@
                                 <div class="form-group">
                                     <label for="email" class="control-label">Adres email</label>
                                     <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                    <span class="help-block resemail" style="color:red; font-size: 80%">Email jest już zajęty</span> 
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-warning btn-lg btn-block" id="zajerestruj">Zarejestruj się</button>

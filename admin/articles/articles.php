@@ -11,7 +11,7 @@
 			              <h3 class="box-title">Dodaj artykuł</h3>
 			            </div>
 			            <!-- /.box-header -->
-                  <form role="form" method="POST" action="articles-create.php">
+                  <form role="form" method="POST" action="?controller=articles&action=store">
 			            <div class="box-body">
 				                <!-- text input -->
 				                <div class="form-group">
@@ -50,7 +50,9 @@
                   <td><?php echo $tab['id']; ?></td>
                   <td><?php echo $tab['tytul']; ?></td>
                   <td>
-                    <button type="button" class="btn btn-block btn-info">Zobacz</button>
+                    <button type="button" class="btn btn-warning">Zobacz</button>
+                    <button type="button" class="btn btn-info fa fa-edit"></button>
+                    <a href="?controller=articles&action=delete&id=<?php echo $tab['id'];?>" class="btn btn-danger fa fa-times"></button>
                   </td>
                 </tr>
                 <?php endforeach; ?>

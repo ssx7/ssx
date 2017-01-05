@@ -44,8 +44,11 @@ $('#pass2').bind("keyup change",function(event) {
 });
 
 
-
+$('.reslogin').hide();
+$('.resemail').hide();
 $('#formularz').submit(function(e) {
+	$('.reslogin').hide();
+	$('.resemail').hide();
 	e.preventDefault();
 	$.ajax({
 	  type: "POST",
@@ -54,6 +57,7 @@ $('#formularz').submit(function(e) {
 	  
 	  success: function(data){
 	  		console.log(data);
+
 	  		var check = 0;
 	  		if(data.check_pass)
 	  		{
@@ -77,11 +81,12 @@ $('#formularz').submit(function(e) {
 	  			$('#info').modal('show');
 
 	  		}
+	  		console.log('aaaa1234');
 	  },
-	  errors: function(data){
+	  error: function(data){
 	  		if(data.responseJSON.check_user)
 	  		{
-
+	  			$('.reslogin').show();
 	  		}
 	  		if(data.responseJSON.check_pass)
 	  		{
@@ -90,8 +95,9 @@ $('#formularz').submit(function(e) {
 
 	  		if(data.responseJSON.check_email)
 	  		{
-
+	  			$('.resemail').show();
 	  		}
+	  		console.log('aaaa');
 	  		console.log(data);
 	  }
 	});

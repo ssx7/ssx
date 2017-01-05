@@ -77,7 +77,7 @@ if(isset($_SESSION)) :
       <ul class="sidebar-menu">
         <li class="header">NAWIGACJA GŁÓWNA</li>
         <li>
-          <a href="?controller=glowna">
+          <a href="?controller=glowna&action=index">
              <i class="fa fa-home"></i><span>Home</span>
           </a>
         </li>
@@ -90,29 +90,29 @@ if(isset($_SESSION)) :
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="?controller=KonfWs"><i class="fa fa-circle-o"></i> Konferencja Wschodnia</a></li>
-            <li ><a href="?controller=KonfZach"><i class="fa fa-circle-o"></i> Konferencja Zachodnia</a></li>
-            <li ><a href="?controller=statystyki"><i class="fa fa-circle-o"></i> Statystyki</a></li>
+            <li><a href="?controller=KonfWs&action=index"><i class="fa fa-circle-o"></i> Konferencja Wschodnia</a></li>
+            <li ><a href="?controller=KonfZach&action=index"><i class="fa fa-circle-o"></i> Konferencja Zachodnia</a></li>
+            <li ><a href="?controller=statystyki&action=index"><i class="fa fa-circle-o"></i> Statystyki</a></li>
           </ul>
         </li>
         <li>
         <li>
-          <a href="?controller=galeria">
+          <a href="?controller=galeria&action=index">
             <i class="fa fa-picture-o" aria-hidden="true"></i> <span>Galeria</span>
           </a>
         </li>
         <li>
-          <a href="?controller=players">
+          <a href="?controller=players&action=index">
             <i class="fa fa-users" aria-hidden="true"></i> <span>Zawodnicy</span>
           </a>
         </li>
         <li>
-          <a href="?controller=calendar">
+          <a href="?controller=calendar&action=index">
             <i class="fa fa-calendar" aria-hidden="true"></i> <span>Kalendarz rozgrywek</span>
           </a>
         </li>
         <li>
-          <a href="?controller=articles">
+          <a href="?controller=articles&action=index">
             <i class="fa fa-newspaper-o" aria-hidden="true"></i> <span>Artykuły</span>
           </a>
         </li>
@@ -121,17 +121,15 @@ if(isset($_SESSION)) :
     <!-- /.sidebar -->
   </aside>
 
-<?php
-  include('routes.php');
-?>
+  <?php
+    include('routes.php');
+  ?>
   
-
-  <footer class="main-footer">
+    <footer class="main-footer" style = "height: 50px">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.7
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a></strong> All rights reserved.
   </footer>
 
 </div>

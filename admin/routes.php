@@ -9,28 +9,136 @@ if($controller == '' && $controller == '/' && $controller == 'glowna')
 	$controller = '/';
 }
 include('../app/Database.php');
-$new = new Database();
-$new->table = 'artykuly';
-
+//$new = new Database();
+//$new->table = 'artykuly';
 
 
 switch($controller){
 
 	case 'articles':
-		include('articles.php');
+		include('ArticlesController.php');
+
+		$art = new ArticlesController(); //pobranie klasy
+
+		switch($action){
+			case 'index':
+				$art->index(); //wywolanie funkcji
+			break;
+
+			case 'add':
+				$art->add();
+			break;
+
+			case 'store':
+				$art->store();
+			break;
+
+			case 'edit':
+				$art->edit();
+			break;
+
+			case 'delete':
+				$id = $_GET['id'];	
+				$art->delete($id);
+			break;
+
+			default :
+				echo 'nie ma takiej strony';
+			break;
+		}
 	break;
+
+
 
 	case 'galeria':
-		include('galeria.php');
+		include('GaleriaController.php');
+
+		$art = new GaleriaController(); //pobranie klasy
+
+		switch($action){
+			case 'index':
+				$art->index(); //wywolanie funkcji
+			break;
+
+			case 'add':
+				$art->add();
+			break;
+
+			case 'edit':
+				$art->edit();
+			break;
+
+			case 'delete':
+				$art->delete();
+			break;
+
+			default :
+				echo 'nie ma takiej strony';
+			break;
+		}
 	break;
+
+
 
 	case 'calendar':
-		include('calendar.php');
+		include('CalendarController.php');
+
+		$art = new CalendarController(); //pobranie klasy
+
+		switch($action){
+			case 'index':
+				$art->index(); //wywolanie funkcji
+			break;
+
+			case 'add':
+				$art->add();
+			break;
+
+			case 'edit':
+				$art->edit();
+			break;
+
+			case 'delete':
+				$art->delete();
+			break;
+
+			default :
+				echo 'nie ma takiej strony';
+			break;
+		}
 	break;
 
+
+
 	case 'players':
-		include('players.php');
+		include('PlayersController.php');
+
+		$art = new PlayersController(); //pobranie klasy
+
+		switch($action){
+			case 'index':
+				$art->index(); //wywolanie funkcji
+			break;
+
+			case 'add':
+				$art->add();
+			break;
+
+			case 'edit':
+				$art->edit();
+			break;
+
+			case 'delete':
+				$art->delete();
+			break;
+
+			default :
+				echo 'nie ma takiej strony';
+			break;
+		}
 	break;
+
+
 
 	case 'KonfWs':
 		include('KonfWs.php');

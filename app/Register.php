@@ -39,8 +39,6 @@ if($pass == $pass_confirm && !$db->checkUser($array, 'users') && !$db->checkEmai
 		'email' =>mysqli_real_escape_string($db->link, $email),
 		'password' => mysqli_real_escape_string($db->link, $pass_hash)
 	]);
-
-	header("Location: ../index.php");
 }
 else
 {

@@ -125,8 +125,9 @@ class Database {
 		mysqli_query($this->link, $sql) or die(mysqli_error($this->link));
 	}
 
-	public function delete(){
-
+	public function delete($id){
+		$zapytanie = "DELETE FROM ".$this->table." WHERE id=".$id.";";
+		mysqli_query($this->link, $zapytanie)or die(mysqli_error($this->link));
 	}
  	/*
  	* Wyswietlenie rekordow
