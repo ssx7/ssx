@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 if(isset($_SESSION)) :
@@ -26,6 +27,8 @@ if(isset($_SESSION)) :
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <!-- MOJE CSSY -->
+  <link rel="stylesheet" href="dist/css/skins/moje.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -39,7 +42,7 @@ if(isset($_SESSION)) :
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="?controller=glowna&action=index" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>CC</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -62,15 +65,11 @@ if(isset($_SESSION)) :
     <section class="sidebar">
       <!-- Sidebar user panel -->
       <div class="user-panel">
-        <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p>Administrator</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        <div class="col-xs-12 col-md-12 col-sm-12">
+          <h3 id="h3MVP"><center>MVP PANEL</center></h3>
         </div>
         <div class="col-xs-12 col-md-12 col-sm-12">
-          <a  class="btn btn-danger" href="logout.php">wyloguj sie</a>
+          <center><a class="btn btn-danger" href="logout.php" id="logout">Wylogowanie</a></center>
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -148,4 +147,4 @@ if(isset($_SESSION)) :
 </html>
 
 <?php else : header("Location: login.php"); ?>
-<?php  endif; endif; ?>
+<?php  endif; endif; ob_flush(); ?>

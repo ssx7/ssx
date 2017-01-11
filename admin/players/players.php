@@ -21,18 +21,17 @@
                   <th>Waga</th>
                   <th></th>
                 </tr>
+                <?php foreach($new->get() as $tab) : ?>
                 <tr>
-                  <td>#2</td>
-                  <td>Kyrie</td>
-                  <td>Irving</td>
-                  <td>191 cm</td>
-                  <td>88 kg</td>
-                  <td><center><button type="button" class="btn btn-info fa fa-edit"></button><button type="button" class="btn btn-danger fa fa-times"></center></td>
+                  <td><?php echo $tab['numer']; ?></td>
+                  <td><?php echo $tab['imie']; ?></td>
+                  <td><?php echo $tab['nazwisko']; ?></td>
+                  <td><?php echo $tab['wzrost']; ?></td>
+                  <td><?php echo $tab['waga']; ?></td>
+                  <td><center><a href="?controller=players&action=edit&id=<?php echo $tab['id'];?>" class="btn btn-info fa fa-edit"></a>
+                  <a href="?controller=players&action=delete&id=<?php echo $tab['id'];?>" class="btn btn-danger fa fa-times"></a> </center> </td>
                 </tr>
-              
-              <tr>
-                <td></td>
-              </tr>
+              <?php endforeach; ?>
       
               </table>
             </div>

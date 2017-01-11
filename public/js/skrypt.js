@@ -1,4 +1,3 @@
-
 function wyswietlZawartosc(nazwa)
 {
 	console.log(nazwa);

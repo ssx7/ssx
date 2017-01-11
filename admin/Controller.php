@@ -5,8 +5,8 @@
 		}
 		public function view(){
 
-		}
-		public function reddirect($url){
+		} 
+		public function redirect($url){
 			header("Location: ".$url);
 		}
 	}

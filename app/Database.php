@@ -130,7 +130,7 @@ class Database {
 		mysqli_query($this->link, $zapytanie)or die(mysqli_error($this->link));
 	}
  	/*
- 	* Wyswietlenie rekordow
+ 	* Wyswietlenie rekordow w adminie zeby nie pierdolilo sie wszedzie bo nie ma czasu na debugowanie
  	*/
 	public function get(){
 		$zapytanie = "SELECT * FROM ".$this->table. ";";
@@ -151,7 +151,7 @@ class Database {
 		$tablica = mysqli_query($this->link, $zapytanie)or die(mysqli_error($this->link));
 
 		$row = mysqli_fetch_array($tablica);
-		return $row[0];
+		return $row;
 	}
 
 	public function charset($table){
@@ -162,6 +162,37 @@ class Database {
 	public function setTable($table){
 		$this->table = $table;
 		return $this->table;
+	}
+
+	/*
+ 	* Wyswietlenie rekordow w glownym
+ 	* zmienna $table -> to jest tabela z bazy danych 
+ 	*/
+	public function getMain($table){
+		if($table == 'artykuly')
+		{
+			$zapytanie = "SELECT * FROM ".$table. " WHERE active=1 ;";
+		}
+		else
+		{
+			$zapytanie = "SELECT * FROM ".$table. ";";
+		}
+		$tablica = mysqli_query($this->link, $zapytanie)or die(mysqli_error($this->link));
+
+		$wyniki = [];
+		while($row = mysqli_fetch_array($tablica))
+		{
+			$wyniki[] = $row;
+		}
+		return $wyniki;
+	}
+
+	/*
+	* uniwersalne zapytanie do dodawania i aktualizowania
+	*/
+	public function zapytanie($zap){
+		mysqli_query($this->link, $zap)or die(mysqli_error($this->link));
+		return true;
 	}
 
 }

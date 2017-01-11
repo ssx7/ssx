@@ -1,4 +1,6 @@
-<?php session_start(); 
+<?php 
+ob_start();
+session_start(); 
     if(isset($_SESSION['check']))
     { 
         echo 'jest ';
@@ -9,6 +11,7 @@
     } 
     include('app/Database.php');
     $db = new Database();
+
     ?>
 <!DOCTYPE html>
 <html>
@@ -45,6 +48,7 @@
     <!-- MODALS -->
     <?php include('resources/modals.php'); ?>
     
+    <?php include('akcje.php'); ?>
     <!-- javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
     
@@ -54,3 +58,4 @@
 
 </body>
 </html>
+<?php ob_flush(); ?> 

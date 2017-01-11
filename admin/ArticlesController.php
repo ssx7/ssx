@@ -33,19 +33,29 @@
 					'created_at' => date('Y-m-d H:i:s'),
 				]);
 
-				echo '123';
+				return $this->redirect('http://phpszymon.dev/admin/index.php?controller=articles&action=index');
 		}
 		public function edit(){
 			//widok
+			$db = new Database();
+			$db->table = 'artykuly';
+			$nazwa = $db->find($_GET['id']);
+			include('articles/articles-edit.php');
 		}
 		public function update(){
 			//post
+		}
+		public function active($id, $active){
+			$db = new Database();
+			$db->zapytanie("UPDATE artykuly SET active=".$active." WHERE id=".$id.";");
+
+			return $this->redirect('http://phpszymon.dev/admin/index.php?controller=articles&action=index');
 		}
 		public function delete($id){
 			$db = new Database();
 			$db->table = 'artykuly';
 			$db->delete($id);
 
-			header('Location: ../articles/articles.php');
+			return $this->redirect('http://phpszymon.dev/admin/index.php?controller=articles&action=index');
 		}
 	}

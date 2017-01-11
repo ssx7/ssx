@@ -43,22 +43,33 @@
                 <tr>
                   <th style="width: 10px">Nr</th>
                   <th>Tytuł</th>
-                  <th>Akcja</th>
+                  <th>Active</th>
+                  <th></th>
                 </tr>
                 <?php foreach($new->get() as $tab) : ?>
                 <tr>
                   <td><?php echo $tab['id']; ?></td>
                   <td><?php echo $tab['tytul']; ?></td>
                   <td>
-                    <button type="button" class="btn btn-warning">Zobacz</button>
-                    <button type="button" class="btn btn-info fa fa-edit"></button>
-                    <a href="?controller=articles&action=delete&id=<?php echo $tab['id'];?>" class="btn btn-danger fa fa-times"></button>
+                    <?php if($tab['active']) : ?> 
+                      <span class="label label-success"><i class="fa fa-check"></i></span>
+                    <?php else : ?>
+                      <span class="label label-danger"><i class="fa fa-times"></i></span>
+                    <?php endif; ?>
+                  </td>
+                  <td>
+                    <a href="?controller=articles&action=edit&id=<?php echo $tab['id'];?>" class="btn btn-info">Edytuj</a>
+                    <a href="?controller=articles&action=delete&id=<?php echo $tab['id'];?>" class="btn btn-warning"> Usuń</a>
+
+                    <?php if($tab['active']) : ?> 
+                    <a class="btn btn-danger" href="?controller=articles&action=active&id=<?php echo $tab['id'];?>&active=0">Zaablokuj</a>
+                    <?php else : ?>
+                    <a class="btn btn-success" href="?controller=articles&action=active&id=<?php echo $tab['id'];?>&active=1">Zaakceptuj</a>
+                    <?php endif; ?>
+
                   </td>
                 </tr>
                 <?php endforeach; ?>
-        <tr>
-          <td></td>
-        </tr>
       
               </table>
             </div>
@@ -82,3 +93,4 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+

@@ -19,17 +19,18 @@
                   <th>Goście</th>
                   <th>Wynik</th>
                   <th>Data</th>
+                  <th></th>
                 </tr>
+                <?php foreach($new->get() as $tab) : ?>
                 <tr>
-                  <td>CAVS</td>
-                  <td>NYK</td>
-                  <td>117 - 88</td>
-                  <td>25 październik 2016</td>
-                  <td><center><button type="button" class="btn btn-info fa fa-edit"></button><button type="button" class="btn btn-danger fa fa-times"></button></center></td>
+                  <td><?php echo $tab['gospodarze']; ?></td>
+                  <td><?php echo $tab['goscie']; ?></td>
+                  <td><?php echo $tab['wynik']; ?></td>
+                  <td><?php echo $tab['dat']; ?></td>
+                  <td><center><a href="?controller=calendar&action=edit&id=<?php echo $tab['id'];?>"" class="btn btn-info fa fa-edit"></a>
+                  <a href="?controller=calendar&action=delete&id=<?php echo $tab['id'];?>" class="btn btn-danger fa fa-times"></a></center></td>
                 </tr>
-              <tr>
-                <td></td>
-              </tr>
+                <?php endforeach; ?>
       
               </table>
             </div>

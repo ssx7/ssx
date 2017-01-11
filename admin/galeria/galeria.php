@@ -11,22 +11,26 @@
 			              <h3 class="box-title">Dodaj zdjęcie</h3>
 			            </div>
 			            <!-- /.box-header -->
-                  <form role="form" method="POST" action="tutaj">
-			            <div class="box-body">
-				                <!-- text input -->
-				                <div class="form-group">
-				                  <label>Zdjęcie</label> <br />
-				                  <button type="button" class="btn btn-info">Dodaj</button>
-				                </div>
-				                <!-- textarea -->
-				                <div class="form-group">
-				                  <label>Opis</label>
-				                  <textarea class="form-control" name="opis" rows="3" placeholder="Opis do zdjęcia"></textarea>
-				                </div>
-			           	</div>
-			           	<div class="box-footer text-center">
-			                <button type="submit" class="btn btn-success">Dodaj zdjęcie</button>
-			            </div>
+                  <form role="form" method="POST" action="?controller=galeria&action=store" enctype="multipart/form-data">
+  			            <div class="box-body">
+                      <!-- ZDJĘCIE HELP
+			                <div class="form-group">
+			                  <label>Zdjęcie</label> <br />
+			                  <button type="button" class="btn btn-info">Dodaj</button>
+			                </div> -->
+                      <div class="form-group">
+                      <label>Zdjęcie</label>
+                      <input type="file" name="zdjecie" class="form-control" placeholder="zdjecie">
+                    </div>
+			                <!-- textarea -->
+			                <div class="form-group">
+			                  <label>Opis</label>
+			                  <textarea class="form-control" name="opis" rows="3" placeholder="Opis do zdjęcia"></textarea>
+			                </div>
+  			           	</div>
+  			           	<div class="box-footer text-center">
+  			                <button type="submit" class="btn btn-success">Dodaj zdjęcie</button>
+  			            </div>
                   </form>
 			        </div>
 	          <!-- /.info-boxik -->
@@ -43,13 +47,18 @@
                 <tr>
                   <th style="width: 10px">Nr</th>
                   <th>Zdjęcie</th>
-                  <th>Akcja</th>
+                  <th></th>
                 </tr>
-
-              <tr>
-                <td></td>
-              </tr>
-      
+                <?php foreach($new->get() as $tab) : ?>
+                <tr>
+                  <td><?php echo $tab['id']; ?></td>
+                  <td> <img src="http://phpszymon.dev/<?php echo $tab['zdjecie']; ?>" style="height: 100px;"></td>
+                  <td>
+                    <a href="?controller=galeria&action=edit&id=<?php echo $tab['id'];?>" class="btn btn-info fa fa-edit"></a>
+                    <a href="?controller=galeria&action=delete&id=<?php echo $tab['id'];?>" class="btn btn-danger fa fa-times"></a>
+                  </td>
+                </tr>
+                <?php endforeach; ?>
               </table>
             </div>
             <!-- /.box-body -->

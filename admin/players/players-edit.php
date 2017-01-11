@@ -7,49 +7,45 @@
         <!-- general form elements disabled -->
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">Dodaj zawodnika</h3>
+            <h3 class="box-title">Edytuj zawodnika</h3>
           </div>
           <!-- /.box-header -->
-          <form role="form" method="POST" action="?controller=players&action=store" enctype="multipart/form-data">
+          <form role="form" method="POST" action="?controller=players&action=update" enctype="multipart/form-data">
           <div class="box-body">
                 <!-- text input -->
                 <div class="form-group">
                   <label>Numer zawodnika</label>
-                  <input type="text" name="numer" class="form-control" placeholder="Numer zawodnika">
+                  <input type="text" name="numer" class="form-control" 
+                  value="<?php echo $nazwa['numer']; ?>">
                 </div>
                 <!-- text input -->
                 <div class="form-group">
                   <label>Imię</label>
-                  <input type="text" name="imie" class="form-control" placeholder="Imię">
+                  <input type="text" name="imie" class="form-control" value="<?php echo $nazwa['imie']; ?>">
                 </div>
                 <!-- text input -->
                 <div class="form-group">
                   <label>Nazwisko</label>
-                  <input type="text" name="nazwisko" class="form-control" placeholder="Nazwisko">
+                  <input type="text" name="nazwisko" class="form-control" value="<?php echo $nazwa['nazwisko']; ?>">
                 </div>
                 <!-- text input -->
                 <div class="form-group">
                   <label>Wzrost</label>
-                  <input type="text" name="wzrost" class="form-control" placeholder="Wzrost">
+                  <input type="text" name="wzrost" class="form-control" value="<?php echo $nazwa['wzrost']; ?>">
                 </div>
                 <!-- text input -->
                 <div class="form-group">
                   <label>Waga</label>
-                  <input type="text" name="waga" class="form-control" placeholder="Waga">
+                  <input type="text" name="waga" class="form-control" value="<?php echo $nazwa['waga']; ?>">
                 </div>
-                <!-- <div class="form-group">
-                 ZDJĘCIE HELP
-                  <label>Zdjęcie zawodnika</label> <br />
-                  <button type="button" class="btn btn-info">Dodaj</button>
-                </div> --> 
                 <div class="form-group">
                   <label>Zdjęcie</label>
-                  <input type="file" name="zdjecie" class="form-control" placeholder="zdjecie">
+                  <input type="file" name="zdjecie" class="form-control" value="<?php echo $nazwa['zdjecie']; ?>">
 
                 </div>
           </div>
           <div class="box-footer text-center">
-              <button type="submit" class="btn btn-success">Dodaj zawodnika</button>
+              <button type="submit" class="btn btn-success">Edytuj zawodnika</button>
           </div>
           </form>
         </div>
