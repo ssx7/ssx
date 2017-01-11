@@ -33,11 +33,17 @@ switch($controller){
 				$art->edit();
 			break;
 
+			case 'update':
+				$art->update();
+			break;
+
 			case 'active':
 				$id = $_GET['id'];
 				$active = $_GET['active'];
 				$art->active($id, $active);
 			break;
+
+
 			case 'delete':
 				$id = $_GET['id'];	
 				$art->delete($id);
@@ -73,6 +79,10 @@ switch($controller){
 				$art->edit();
 			break;
 
+			case 'update':
+				$art->update();
+			break;
+			
 			case 'delete':
 				$id = $_GET['id'];	
 				$art->delete($id);
@@ -106,6 +116,10 @@ switch($controller){
 
 			case 'edit':
 				$art->edit();
+			break;
+
+			case 'update':
+				$art->update();
 			break;
 
 			case 'delete':
@@ -143,6 +157,10 @@ switch($controller){
 				$art->edit();
 			break;
 
+			case 'update':
+				$art->update();
+			break;
+
 			case 'delete':
 				$id = $_GET['id'];	
 				$art->delete($id);
@@ -165,6 +183,9 @@ switch($controller){
 	break;
 	case 'statystyki':
 		include('statystyki.php');
+	break;
+	case 'Druzyny':
+		include('Druzyny.php');
 	break;
 
 

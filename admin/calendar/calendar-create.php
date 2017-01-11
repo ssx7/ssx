@@ -10,7 +10,7 @@
             <h3 class="box-title">Dodaj mecz</h3>
           </div>
           <!-- /.box-header -->
-          <form role="form" method="POST" action="?controller= calendar&action=store">
+          <form role="form" method="POST" action="?controller=calendar&action=store">
           <div class="box-body">
                 <!-- text input -->
                 <div class="form-group">
@@ -25,7 +25,7 @@
                 <!-- text input -->
                 <div class="form-group">
                   <label>Wynik</label>
-                  <input type="text" name="wynik" class="form-control" placeholder="Wynik">
+                  <input type="text" name="wynik" class="form-control" placeholder="wynik gospodarze - wynik goscie">
                 </div>
                 <!-- text input -->
                 <div class="form-group">

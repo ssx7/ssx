@@ -54,6 +54,18 @@
 		}
 		public function update(){
 			//post
+			$db = new Database();
+			$gospodarze = $_POST['gospodarze'];
+			$goscie = $_POST['goscie'];
+			$wynik = $_POST['wynik'];
+			$dat = $_POST['dat'];
+			$lid = $_POST['lid'];
+			$opis = $_POST['opis'];
+			$id = $_POST['id'];
+				
+			$db->zapytanie("UPDATE kalendarz SET gospodarze='".$gospodarze."' , goscie='".$goscie."' , wynik='".$wynik."' , dat='".$dat."' , lid='".$lid."' , opis='".$opis."' WHERE id=".$id.";");
+
+				return $this->redirect('http://phpszymon.dev/admin/index.php?controller=calendar&action=index');
 		}
 		public function delete($id){
 			$db = new Database();

@@ -12,7 +12,7 @@
           <!-- /.box-header -->
           <form role="form" method="POST" action="?controller=players&action=update" enctype="multipart/form-data">
           <div class="box-body">
-                <!-- text input -->
+                <input type="hidden" name="id" value="<?php echo $nazwa['id']; ?>">
                 <div class="form-group">
                   <label>Numer zawodnika</label>
                   <input type="text" name="numer" class="form-control" 
@@ -40,8 +40,7 @@
                 </div>
                 <div class="form-group">
                   <label>Zdjęcie</label>
-                  <input type="file" name="zdjecie" class="form-control" value="<?php echo $nazwa['zdjecie']; ?>">
-
+                  <input type="file" name="zdjecie" class="form-control" >
                 </div>
           </div>
           <div class="box-footer text-center">

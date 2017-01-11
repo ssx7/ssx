@@ -13,6 +13,7 @@
 			            <!-- /.box-header -->
                   <form role="form" method="POST" action="?controller=articles&action=update">
 			            <div class="box-body">
+			            <input type="hidden" name="id" value="<?php echo $nazwa['id']; ?>">
 				                <!-- text input -->
 				                <div class="form-group">
 				                  <label>Tytuł</label>

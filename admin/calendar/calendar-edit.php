@@ -12,7 +12,7 @@
           <!-- /.box-header -->
           <form role="form" method="POST" action="?controller= calendar&action=update">
           <div class="box-body">
-                <!-- text input -->
+            <input type="hidden" name="id" value="<?php echo $nazwa['id']; ?>">
                 <div class="form-group">
                   <label>Gospodarze</label>
                   <input type="text" name="gospodarze" class="form-control" value="<?php echo $nazwa['gospodarze']; ?>">

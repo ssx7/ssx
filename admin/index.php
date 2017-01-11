@@ -92,6 +92,7 @@ if(isset($_SESSION)) :
             <li><a href="?controller=KonfWs&action=index"><i class="fa fa-circle-o"></i> Konferencja Wschodnia</a></li>
             <li ><a href="?controller=KonfZach&action=index"><i class="fa fa-circle-o"></i> Konferencja Zachodnia</a></li>
             <li ><a href="?controller=statystyki&action=index"><i class="fa fa-circle-o"></i> Statystyki</a></li>
+            <li><a href="?controller=Druzyny&action=index"><i class="fa fa-circle-o"></i>Drużyny</a></li>
           </ul>
         </li>
         <li>

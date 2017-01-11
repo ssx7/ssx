@@ -44,6 +44,15 @@
 		}
 		public function update(){
 			//post
+			$db = new Database();
+			$subject = $_POST['subject'];
+			$opis = $_POST['opis'];
+			$id = $_POST['id'];
+				
+
+			$db->zapytanie("UPDATE artykuly SET tytul='".$subject."' , opis='".$opis."' WHERE id=".$id.";");
+
+				return $this->redirect('http://phpszymon.dev/admin/index.php?controller=articles&action=index');
 		}
 		public function active($id, $active){
 			$db = new Database();

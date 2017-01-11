@@ -13,11 +13,6 @@
 			            <!-- /.box-header -->
                   <form role="form" method="POST" action="?controller=galeria&action=store" enctype="multipart/form-data">
   			            <div class="box-body">
-                      <!-- ZDJĘCIE HELP
-			                <div class="form-group">
-			                  <label>Zdjęcie</label> <br />
-			                  <button type="button" class="btn btn-info">Dodaj</button>
-			                </div> -->
                       <div class="form-group">
                       <label>Zdjęcie</label>
                       <input type="file" name="zdjecie" class="form-control" placeholder="zdjecie">

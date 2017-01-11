@@ -35,6 +35,7 @@
 					'opis' =>mysqli_real_escape_string($db->link, $opis),
 				]);
 
+
 				return $this->redirect('http://phpszymon.dev/admin/index.php?controller=galeria&action=index');
 		}
 		public function edit(){
@@ -45,7 +46,39 @@
 			include('galeria/galeria-edit.php');
 		}
 		public function update(){
+			$db = new Database();
+			$db->table = 'galeria';
+			$nazwa = $db->find($_POST['id']);
+			$id = $_POST['id'];
+			$check_file = false;
+			$opis = $_POST['opis'];
 			//post
+			if($_FILES['zdjecie']['name'] != '')
+			{
+				unlink('../'.$nazwa['zdjecie']);
+				$path = 'public/image/Galeria'; //tutaj bedziesz wgrywal pliki
+
+				$file_name = $_FILES['zdjecie']['name'];
+
+				move_uploaded_file($_FILES['zdjecie']['tmp_name'],'../'.$path.'/'.$file_name); 
+				$zdjecie = $path.'/'.$file_name; //to do bazy
+
+				$check_file= true;
+			}
+			else
+			{
+				echo 'nie ma';
+			}
+
+			if($check_file)
+			{
+				$db->zapytanie("UPDATE galeria SET opis='".$opis."' , zdjecie='".$zdjecie."' WHERE id=".$id.";");
+			}
+			else{
+				$db->zapytanie("UPDATE galeria SET opis='".$opis."' WHERE id=".$id.";");
+			}
+			return $this->redirect('http://phpszymon.dev/admin/index.php?controller=galeria&action=index');
+
 		}
 		public function delete($id){
 			$db = new Database();

@@ -130,10 +130,10 @@ class Database {
 		mysqli_query($this->link, $zapytanie)or die(mysqli_error($this->link));
 	}
  	/*
- 	* Wyswietlenie rekordow w adminie zeby nie pierdolilo sie wszedzie bo nie ma czasu na debugowanie
+ 	* Wyswietlenie rekordow w adminie 
  	*/
 	public function get(){
-		$zapytanie = "SELECT * FROM ".$this->table. ";";
+		$zapytanie = "SELECT * FROM ".$this->table. " ORDER BY id DESC;";
 		$tablica = mysqli_query($this->link, $zapytanie)or die(mysqli_error($this->link));
 
 		$wyniki = [];
@@ -171,11 +171,11 @@ class Database {
 	public function getMain($table){
 		if($table == 'artykuly')
 		{
-			$zapytanie = "SELECT * FROM ".$table. " WHERE active=1 ;";
+			$zapytanie = "SELECT * FROM ".$table. " WHERE active=1 ORDER BY id DESC;";
 		}
 		else
 		{
-			$zapytanie = "SELECT * FROM ".$table. ";";
+			$zapytanie = "SELECT * FROM ".$table. " ;";
 		}
 		$tablica = mysqli_query($this->link, $zapytanie)or die(mysqli_error($this->link));
 
