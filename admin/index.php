@@ -83,7 +83,7 @@ if(isset($_SESSION)) :
 
         <li class="treeview">
           <a href="#">
-             <i class="fa fa-th"></i> <span>Tabela</span>
+             <i class="fa fa-th"></i> <span>Tabele</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -91,8 +91,8 @@ if(isset($_SESSION)) :
           <ul class="treeview-menu">
             <li><a href="?controller=KonfWs&action=index"><i class="fa fa-circle-o"></i> Konferencja Wschodnia</a></li>
             <li ><a href="?controller=KonfZach&action=index"><i class="fa fa-circle-o"></i> Konferencja Zachodnia</a></li>
-            <li ><a href="?controller=statystyki&action=index"><i class="fa fa-circle-o"></i> Statystyki</a></li>
-            <li><a href="?controller=Druzyny&action=index"><i class="fa fa-circle-o"></i>Drużyny</a></li>
+            <li><a href="?controller=druzyny&action=index"><i class="fa fa-circle-o"></i> Drużyny</a></li>
+            <li ><a href="?controller=statystykii&action=index"><i class="fa fa-circle-o"></i> Statystyki zawodnikow</a></li>
           </ul>
         </li>
         <li>

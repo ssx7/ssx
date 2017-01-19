@@ -1,7 +1,7 @@
 <?php
-	include('admin/Controller.php');
+session_start();
 
-	class MainController extends Controller{
+	class MainController{
 		
 		public function addArticle(){
 			//post
@@ -25,7 +25,7 @@
 					'created_at' => date('Y-m-d H:i:s'),
 				]);
 
-				return $this->redirect('http://phpszymon.dev/');
+				return header('Location: http://phpszymon.dev/');
 		}
 		
 	}

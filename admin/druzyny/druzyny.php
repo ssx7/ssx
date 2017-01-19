@@ -6,7 +6,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Zawodnicy</h3>
+              <h3 class="box-title">Drużyny</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -16,10 +16,7 @@
                   <th>Drużyna</th>
                   <th>Typ</th>
                 </tr>
-                <?php
-                $new = new Database();
-                $new->table='druzyny';
-                foreach($new->get() as $tab) : ?>
+                <?php foreach($new->get() as $tab) : ?>
                 <tr>
                   <td><?php echo $tab['id']; ?></td>
                   <td><?php echo $tab['druzyna']; ?></td>

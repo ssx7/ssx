@@ -2,28 +2,30 @@
   <div class="content-wrapper">
     <!-- Main content -->
     <section class="content">
+    <?php
+        $db = new Database();
+        $db->table='odwiedziny';
+        $cooki = $db->zap_get('SELECT MONTH(data) m, YEAR(data) y, SUM(ilosc) suma FROM odwiedziny GROUP BY YEAR(data), MONTH(data)');
+
+        $miesiace = [];
+        $ilosc = [];
+        $sumuj = 0;
+        foreach($cooki as $cook)
+        {
+              $miesiace [] = $cook['y'].'-'.$cook['m'];
+              $ilosc[] = $cook['suma'];
+              $sumuj += $cook['suma'];
+        }
+        ?>
       <!-- Info boxes -->
       <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+            <span class="info-box-icon bg-green"><i class="ion ion-ios-people-outline"></i></span>
 
-            <div class="info-box-content">
-              <span class="info-box-text">CPU Traffic</span>
-              <span class="info-box-number">90<small>%</small></span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Likes</span>
-              <span class="info-box-number">41,410</span>
+            <div class="info-box-content"">
+              <h4><center>Liczba wszystkich wyświetleń strony wynosi:</center></h4>
+              <h3><center><?php echo $sumuj; ?></center></h3> 
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -31,35 +33,10 @@
         </div>
         <!-- /.col -->
 
-        <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Sales</span>
-              <span class="info-box-number">760</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">New Members</span>
-              <span class="info-box-number">2,000</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
+        <script>
+        var tabelka_miesiace = <?php echo json_encode($miesiace); ?> ;
+        var ilosc = <?php echo json_encode($ilosc); ?> ;
+        </script>
         <div class="col-md-12 col-sm-12 col-xs-12">
           <!-- BAR CHART -->
           <div class="box box-success">
@@ -79,4 +56,4 @@
     </section>
     <!-- /.content -->
 </div>
-  <!-- /.content-wrapper -->
+  <!-- /.content-wrapper --> 

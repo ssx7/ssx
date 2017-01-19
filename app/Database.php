@@ -195,6 +195,20 @@ class Database {
 		return true;
 	}
 
+	/*
+	* zapytanie uniwersalne tylko do wyswietlania rekordow
+	*
+	*/
+	public function zap_get($zap){
+		$tablica = mysqli_query($this->link, $zap)or die(mysqli_error($this->link));
+
+		$wyniki = [];
+		while($row = mysqli_fetch_array($tablica))
+		{
+			$wyniki[] = $row;
+		}
+		return $wyniki;
+	}
 }
 
 

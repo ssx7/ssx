@@ -9,18 +9,30 @@
           <div class="box-header with-border">
             <h3 class="box-title">Dodaj mecz</h3>
           </div>
+          
           <!-- /.box-header -->
           <form role="form" method="POST" action="?controller=calendar&action=store">
           <div class="box-body">
                 <!-- text input -->
+                <!-- Select Basic -->
+                <!-- select -->
                 <div class="form-group">
-                  <label>Gospodarze</label>
-                  <input type="text" name="gospodarze" class="form-control" placeholder="Gospodarze">
+                  <label>Select</label>
+                  <select class="form-control" name="gospodarze">
+                    <?php foreach($new->get() as $druzyna) : ?>
+                    <option value="<?php echo $druzyna['id']; ?>"><?php echo $druzyna['druzyna']; ?></option>
+                    <?php endforeach; ?>
+                   
+                  </select>
                 </div>
                 <!-- text input -->
                 <div class="form-group">
                   <label>Goście</label>
-                  <input type="text" name="goscie" class="form-control" placeholder="Goście">
+                  <select class="form-control" name="goscie">
+                  <?php foreach($new->get() as $druzyna) : ?>
+                    <option value="<?php echo $druzyna['id']; ?>"><?php echo $druzyna['druzyna']; ?></option>
+                  <?php endforeach; ?>
+                  </select>
                 </div>
                 <!-- text input -->
                 <div class="form-group">
@@ -30,7 +42,7 @@
                 <!-- text input -->
                 <div class="form-group">
                   <label>Data</label>
-                  <input type="text" name="dat" class="form-control" placeholder="Data">
+                  <input type="date" name="dat" class="form-control" placeholder="Data">
                 </div>
                 <!-- text input -->
                 <div class="form-group">

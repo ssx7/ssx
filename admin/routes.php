@@ -103,7 +103,7 @@ switch($controller){
 
 		switch($action){
 			case 'index':
-				$art->index(); //wywolanie funkcji
+				$art->index(); //wywolanie funkcji kurwa gdzie ty trzymasz ten controlelr
 			break;
 
 			case 'add':
@@ -181,11 +181,80 @@ switch($controller){
 	case 'KonfZach':
 		include('KonfZach.php');
 	break;
-	case 'statystyki':
-		include('statystyki.php');
+
+	case 'druzyny':
+		include('DruzynyController.php');
+
+		$art = new DruzynyController(); //pobranie klasy
+
+		switch($action){
+			case 'index':
+				$art->index(); //wywolanie funkcji
+			break;
+
+			case 'add':
+				$art->add();
+			break;
+
+			case 'store':
+				$art->store();
+			break;
+
+			case 'edit':
+				$art->edit();
+			break;
+
+			case 'update':
+				$art->update();
+			break;
+
+			case 'delete':
+				$id = $_GET['id'];	
+				$art->delete($id);
+			break;
+
+			default :
+				echo 'nie ma takiej strony';
+			break;
+		}
 	break;
-	case 'Druzyny':
-		include('Druzyny.php');
+
+	case 'statystykii':
+		include('StatController.php');
+
+		$art = new StatController(); //pobranie klasy
+
+		switch($action){
+			case 'index':
+				$art->index(); //wywolanie funkcji
+				
+			break;
+
+			case 'add':
+				$art->add();
+			break;
+
+			case 'store':
+				$art->store();
+			break;
+
+			case 'edit':
+				$art->edit();
+			break;
+
+			case 'update':
+				$art->update();
+			break;
+
+			case 'delete':
+				$id = $_GET['id'];	
+				$art->delete($id);
+			break;
+
+			default :
+				echo 'nie ma takiej strony';
+			break;
+		}
 	break;
 
 

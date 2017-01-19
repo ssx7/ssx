@@ -11,9 +11,9 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+
               <a href="?controller=calendar&action=add" class="btn btn-info">Dodaj mecz</a> <br /><br />
               <table class="table table-bordered">
-              <!-- SPYTAJ KRYSTIANA CZY MOŻNA ZROBIĆ OPCJE, W KTÓREJ CAVS WCZYTUJĄ SIĘ SAMI I JEST OPCJA CZY GRAJĄ U SIEBIE CZY NA WYJEŹDZIE-->
                 <tr>
                   <th>Gospodarze</th>
                   <th>Goście</th>
@@ -21,17 +21,16 @@
                   <th>Data</th>
                   <th></th>
                 </tr>
-                <?php foreach($new->get() as $tab) : ?>
+                <?php foreach($new->zap_get('SELECT ka.id, ka.gospodarze, ka.goscie, ka.wynik, ka.dat, ka.lid, ka.opis, dr.id druzyna_p_id, dr.druzyna druzyna_pierwsza, dru.id druzyna_d_id, dru.druzyna  druzyna_druga FROM kalendarz ka JOIN druzyny dr ON ( ka.gospodarze = dr.id ) JOIN druzyny dru ON (ka.goscie = dru.id ) ') as $tab) : ?>
                 <tr>
-                  <td><?php echo $tab['gospodarze']; ?></td>
-                  <td><?php echo $tab['goscie']; ?></td>
+                  <td><?php echo $tab['druzyna_pierwsza']; ?></td>
+                  <td><?php echo $tab['druzyna_druga']; ?></td>
                   <td><?php echo $tab['wynik']; ?></td>
                   <td><?php echo $tab['dat']; ?></td>
                   <td><center><a href="?controller=calendar&action=edit&id=<?php echo $tab['id'];?>"" class="btn btn-info fa fa-edit"></a>
                   <a href="?controller=calendar&action=delete&id=<?php echo $tab['id'];?>" class="btn btn-danger fa fa-times"></a></center></td>
                 </tr>
                 <?php endforeach; ?>
-      
               </table>
             </div>
             <!-- /.box-body -->

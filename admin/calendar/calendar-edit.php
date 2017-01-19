@@ -9,18 +9,35 @@
           <div class="box-header with-border">
             <h3 class="box-title">Edytuj mecz</h3>
           </div>
+          <?php $pokaz = $new->zap_get('SELECT ka.id, ka.gospodarze, ka.goscie, ka.wynik, ka.dat, ka.lid, ka.opis, dr.id druzyna_p_id, dr.druzyna druzyna_pierwsza, dru.id druzyna_d_id, dru.druzyna  druzyna_druga FROM kalendarz ka JOIN druzyny dr ON ( ka.gospodarze = dr.id ) JOIN druzyny dru ON (ka.goscie = dru.id ) WHERE ka.id ='.$_GET['id'].' ');  ?>
           <!-- /.box-header -->
           <form role="form" method="POST" action="?controller= calendar&action=update">
           <div class="box-body">
             <input type="hidden" name="id" value="<?php echo $nazwa['id']; ?>">
                 <div class="form-group">
-                  <label>Gospodarze</label>
-                  <input type="text" name="gospodarze" class="form-control" value="<?php echo $nazwa['gospodarze']; ?>">
+                  <label>Select</label>
+                  <select class="form-control" name="gospodarze">
+                    <?php foreach($new->get() as $druzyna) : ?>
+
+
+                    <option value="<?php echo $druzyna['id']; ?>" <?php if($pokaz[0]['druzyna_p_id'] == $druzyna['id']) : ?> selected <?php endif; ?> >
+                      <?php echo $druzyna['druzyna']; ?>
+                    </option>
+
+
+                    <?php endforeach; ?>
+                   
+                  </select>
                 </div>
                 <!-- text input -->
+
                 <div class="form-group">
                   <label>Goście</label>
-                  <input type="text" name="goscie" class="form-control" value="<?php echo $nazwa['goscie']; ?>">
+                  <select class="form-control" name="goscie">
+                  <?php foreach($new->get() as $druzyna) : ?>
+                    <option value="<?php echo $druzyna['id']; ?>"  <?php if($pokaz[0]['druzyna_d_id'] == $druzyna['id']) : ?> selected <?php endif; ?> ><?php echo $druzyna['druzyna']; ?></option>
+                  <?php endforeach; ?>
+                  </select>
                 </div>
                 <!-- text input -->
                 <div class="form-group">
@@ -30,7 +47,7 @@
                 <!-- text input -->
                 <div class="form-group">
                   <label>Data</label>
-                  <input type="text" name="dat" class="form-control" value="<?php echo $nazwa['dat']; ?>">
+                  <input type="date" name="dat" class="form-control" value="<?php echo $nazwa['dat']; ?>">
                 </div>
                 <!-- text input -->
                 <div class="form-group">

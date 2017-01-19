@@ -37,11 +37,6 @@
                   <label>Waga</label>
                   <input type="text" name="waga" class="form-control" placeholder="Waga">
                 </div>
-                <!-- <div class="form-group">
-                 ZDJĘCIE HELP
-                  <label>Zdjęcie zawodnika</label> <br />
-                  <button type="button" class="btn btn-info">Dodaj</button>
-                </div> --> 
                 <div class="form-group">
                   <label>Zdjęcie</label>
                   <input type="file" name="zdjecie" class="form-control" placeholder="zdjecie">

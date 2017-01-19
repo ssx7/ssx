@@ -28,110 +28,86 @@
                 <div class ="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="tab-content">
 
-
+                    <?php include('../app/Database.php'); 
+                    $db = new Database();
+                    $tab_poz = $db->zap_get('SELECT * FROM zawodnicy WHERE pozycja="PG"');
+                    ?>
                         <div class ="tab-pane fade in active" id = "PG">
                             <div class="row">
+                            <?php
+                            $tab_poz = $db->zap_get('SELECT * FROM zawodnicy WHERE pozycja="PG"');
+                             foreach($tab_poz as $tab) : ?>
                                 <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/irv.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#2 Kyrie Irving</h3></center>
-                                    <center><p>191 cm || 88 kg</p></center>
+                                    <center><img src = "<?php echo $tab['zdjecie']; ?>" class ="img-responsive img-circle"></center>
+                                    <center><h3><?php echo '#'.$tab['numer']." ".$tab['imie']." ".$tab['nazwisko']; ?></h3></center>
+                                    <center><p><?php echo $tab['wzrost']." cm || ".$tab['waga']." kg " ?></p></center>
                                 </div>
-                                <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/fel.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#20 Kay Felder</h3></center>
-                                    <center><p>175 cm || 80 kg</p></center>
-                                </div>
-                                <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><center><img src = "public/image/Zawodnicy/zaw/McR.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#12 Jordan McRae</h3></center>
-                                    <center><p>196 cm || 81 kg</p></center>
-                                </div>
-                                <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/will.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#52 Mo Williams</h3></center>
-                                    <center><p>185 cm || 89 kg</p></center>
-                                </div>
+                            <?php endforeach; ?> 
                             </div>
                         </div>
 
+                        <!-- kolejne zapytanie z inną zmienna niz tab_poz i te same zapytanie z inna pozycja -->
 
                         <div class ="tab-pane fade" id = "SG">
                             <div class="row">
+                            <?php
+                            $tab_poz = $db->zap_get('SELECT * FROM zawodnicy WHERE pozycja="SG"');
+                             foreach($tab_poz as $tab) : ?>
                                 <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/shu.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#4 Iman Shumpert</h3></center>
-                                    <center><p>196 cm || 100 kg</p></center>
+                                    <center><img src = "<?php echo $tab['zdjecie']; ?>" class ="img-responsive img-circle"></center>
+                                    <center><h3><?php echo '#'.$tab['numer']." ".$tab['imie']." ".$tab['nazwisko']; ?></h3></center>
+                                    <center><p><?php echo $tab['wzrost']." cm || ".$tab['waga']." kg " ?></p></center>
                                 </div>
-                                <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/smi.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#5 JR Smith</h3></center>
-                                    <center><p>198 cm || 102 kg</p></center>
-                                </div>
-                                <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/jon.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#1 James Jones</h3></center>
-                                    <center><p>203 cm || 99 kg</p></center>
-                                </div>
-                                <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/ligg.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#14 DeAndre Liggins</h3></center>
-                                    <center><p>198 cm || 95 kg</p></center>
-                                </div>
+                            <?php endforeach; ?> 
                             </div>
                         </div>
 
 
                         <div class ="tab-pane fade" id = "SF">
                             <div class="row">
+                            <?php
+                            $tab_poz = $db->zap_get('SELECT * FROM zawodnicy WHERE pozycja="SF"');
+                             foreach($tab_poz as $tab) : ?>
                                 <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/jam.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#23 LeBron James</h3></center>
-                                    <center><p>203 cm || 113 kg</p></center>
+                                    <center><img src = "<?php echo $tab['zdjecie']; ?>" class ="img-responsive img-circle"></center>
+                                    <center><h3><?php echo '#'.$tab['numer']." ".$tab['imie']." ".$tab['nazwisko']; ?></h3></center>
+                                    <center><p><?php echo $tab['wzrost']." cm || ".$tab['waga']." kg " ?></p></center>
                                 </div>
-                                <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/jeff.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#24 Richard Jefferson</h3></center>
-                                    <center><p>201 cm || 106 kg</p></center>
-                                </div>
-                                <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/dun.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#3 Mike Dunleavy</h3></center>
-                                    <center><p>206 cm || 104 kg</p></center>
-                                </div>
+                            <?php endforeach; ?> 
                             </div>
                         </div>
 
 
                         <div class ="tab-pane fade" id = "PF">
                             <div class="row">
+                            <?php
+                            $tab_poz = $db->zap_get('SELECT * FROM zawodnicy WHERE pozycja="PF"');
+                             foreach($tab_poz as $tab) : ?>
                                 <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/lov.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#0 Kevin Love</h3></center>
-                                    <center><p>208 cm || 114 kg</p></center>
+                                    <center><img src = "<?php echo $tab['zdjecie']; ?>" class ="img-responsive img-circle"></center>
+                                    <center><h3><?php echo '#'.$tab['numer']." ".$tab['imie']." ".$tab['nazwisko']; ?></h3></center>
+                                    <center><p><?php echo $tab['wzrost']." cm || ".$tab['waga']." kg " ?></p></center>
                                 </div>
-                                <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/fry.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#8 Channing Frye</h3></center>
-                                    <center><p>211 cm || 115 kg</p></center>
-                                </div>
+                            <?php endforeach; ?> 
                             </div>
                         </div>
 
 
                         <div class ="tab-pane fade" id = "C">
                             <div class="row">
+                            <?php
+                            $tab_poz = $db->zap_get('SELECT * FROM zawodnicy WHERE pozycja="C"');
+                             foreach($tab_poz as $tab) : ?>
                                 <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/and.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#00 Chris Andersen</h3></center>
-                                    <center><p>208 cm || 111 kg</p></center>
+                                    <center><img src = "<?php echo $tab['zdjecie']; ?>" class ="img-responsive img-circle"></center>
+                                    <center><h3><?php echo '#'.$tab['numer']." ".$tab['imie']." ".$tab['nazwisko']; ?></h3></center>
+                                    <center><p><?php echo $tab['wzrost']." cm || ".$tab['waga']." kg " ?></p></center>
                                 </div>
-                                <div class ="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                                    <center><img src = "public/image/Zawodnicy/zaw/tho.png" class ="img-responsive img-circle"></center>
-                                    <center><h3>#13 Tristan Thompson</h3></center>
-                                    <center><p>206 cm || 108 kg</p></center>
-                                </div>
+                            <?php endforeach; ?> 
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>

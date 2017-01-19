@@ -1,6 +1,7 @@
 <?php 
-ob_start();
+
 session_start(); 
+print_r($_SESSION);
     if(isset($_SESSION['check']))
     { 
         echo 'jest ';
@@ -13,6 +14,38 @@ session_start();
     $db = new Database();
 
     ?>
+    <?php
+
+ // 86400 = 1 day
+if(isset($_COOKIE['licznik']))
+{
+    $pokaz = $db->zap_get("SELECT * FROM odwiedziny WHERE data='".date('Y-m-d')."' ;");
+    if(count($pokaz) > 0)
+    {
+        $ilosc = $pokaz[0]['ilosc'];
+    }
+    //print_r($pokaz);
+}
+else
+{
+    $cookie_name = "licznik";
+    $cookie_value = 1;
+    setcookie($cookie_name, $cookie_value, time() + 86400, "/");
+
+    $pokaz = $db->zap_get("SELECT * FROM odwiedziny WHERE data='".date('Y-m-d')."' ;");
+
+    if(count($pokaz) > 0)
+    {
+        $ilosc = $pokaz[0]['ilosc'] + 1;
+        $db->zapytanie("UPDATE odwiedziny SET ilosc='".$ilosc."' WHERE data='".date('Y-m-d')."' ;");
+    }
+    else{
+        $db->zapytanie("INSERT INTO odwiedziny (`data`,`ilosc`) VALUES('".date('Y-m-d')."',1);");
+    }
+    
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,4 +91,3 @@ session_start();
 
 </body>
 </html>
-<?php ob_flush(); ?> 

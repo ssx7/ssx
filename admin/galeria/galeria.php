@@ -47,7 +47,7 @@
                 <?php foreach($new->get() as $tab) : ?>
                 <tr>
                   <td><?php echo $tab['id']; ?></td>
-                  <td> <img src="http://phpszymon.dev/<?php echo $tab['zdjecie']; ?>" style="height: 100px;"></td>
+                  <td> <img src="http://phpszymon.dev/<?php echo $tab['zdjecie']; ?>" style="height: 140px; width: 200px"></td>
                   <td>
                     <a href="?controller=galeria&action=edit&id=<?php echo $tab['id'];?>" class="btn btn-info fa fa-edit"></a>
                     <a href="?controller=galeria&action=delete&id=<?php echo $tab['id'];?>" class="btn btn-danger fa fa-times"></a>

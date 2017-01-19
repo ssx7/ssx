@@ -6,9 +6,13 @@
 		public function index(){
 			$new = new Database();
 			$new->table='kalendarz';
+
+			
 			include('calendar/calendar.php');
 		}
 		public function add(){
+			$new = new Database();
+			$new->table='druzyny';
 			//widok
 			include('calendar/calendar-create.php');
 		}
@@ -43,13 +47,17 @@
 					'opis' =>mysqli_real_escape_string($db->link, $opis),
 				]);
 
-				echo '123';
+				return $this->redirect('http://phpszymon.dev/admin/index.php?controller=calendar&action=index');
 		}
 		public function edit(){
 			//widok
 			$db = new Database();
 			$db->table = 'kalendarz';
 			$nazwa = $db->find($_GET['id']);
+
+			$new = new Database();
+			$new->table='druzyny';
+
 			include('calendar/calendar-edit.php');
 		}
 		public function update(){

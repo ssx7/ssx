@@ -16,11 +16,11 @@
 			$db = new Database();
 			$db->table = 'galeria';
 
-			$path = 'public/image/Galeria'; //tutaj bedziesz wgrywal pliki
+			$path = 'public/image/Galeria'; // wgrywane plików
 
 			$file_name = $_FILES['zdjecie']['name'];
 
-			move_uploaded_file($_FILES['zdjecie']['tmp_name'],'../'.$path.'/'.$file_name); //funkcja sluzy do wgrania pliku, pierwszy warunek to musi byc z tmp_name a drugi warunek gdzie to ma byc wgrane z nazwa pliku huju pierdolony w diipe
+			move_uploaded_file($_FILES['zdjecie']['tmp_name'],'../'.$path.'/'.$file_name); //funkcja do wgrania pliku
 
 			$zdjecie = $path.'/'.$file_name;
 				$opis = $_POST['opis'];
@@ -56,12 +56,12 @@
 			if($_FILES['zdjecie']['name'] != '')
 			{
 				unlink('../'.$nazwa['zdjecie']);
-				$path = 'public/image/Galeria'; //tutaj bedziesz wgrywal pliki
+				$path = 'public/image/Galeria'; //wgrywanie plików
 
 				$file_name = $_FILES['zdjecie']['name'];
 
 				move_uploaded_file($_FILES['zdjecie']['tmp_name'],'../'.$path.'/'.$file_name); 
-				$zdjecie = $path.'/'.$file_name; //to do bazy
+				$zdjecie = $path.'/'.$file_name; //baza
 
 				$check_file= true;
 			}
